@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vision Vanguards | STEM Racing Team</title>
+
+  <style>
+    :root {
+      --turquoise: #40E0D0;
+      --black: #000000;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      background: var(--white);
+      z-index: 1000;
+    }
+
+    .nav a {
+      color: var(--black);
+      text-decoration: none;
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .nav a:hover::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: var(--turquoise);
+      bottom: -5px;
+      left: 0;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hero mit Parallax */
+    .hero {
+      height: 100vh;
+      background: var(--turquoise) url('hero-bg.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: var(--white);
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+
+    /* Section-Grundlagen */
+    .section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--turquoise);
+      text-align: center;
+    }
+
+    .section ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    /* Partner-Grid */
+    .partners-grid {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .partner {
+      text-align: center;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .partner img {
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .partner:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Instagram-Button */
+    .insta-btn {
+      display: inline-block;
+      background: #E1306C;
+      color: var(--white);
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-top: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .insta-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Scroll-Animationen */
+    .fade-in, .slide-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Parallax-Grundlagen */
+    .parallax {
+      position: relative;
+      will-change: transform;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <a href="#" class="logo">Vision Vanguards</a>
+    <ul>
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#partners">Partner</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero parallax" data-speed="0.5">
+    <h1>Vision Vanguards</h1>
+    <p>STEM Racing Team der Alexander-von-Humboldt-Schule Neumünster</p>
+    <a href="#about" class="btn">Mehr erfahren</a>
+  </header>
+
+  <section id="about" class="section fade-in parallax" data-speed="0.3">
+    <h2>Unsere Mission</h2>
+    <p>Als Vision Vanguards gestalten wir die Zukunft des Motorsports mit Technik, Kreativität und Teamgeist.</p>
+    <ul>
+      <li>Teilnahme an STEM Racing Germany 2025/26</li>
+      <li>Entwicklung innovativer Rennwagenprototypen</li>
+      <li>Förderung von MINT-Kompetenzen in der Schule</li>
+    </ul>
+  </section>
+
+  <section id="team" class="section slide-up parallax" data-speed="0.4">
+    <h2>Das Team</h2>
+    <p>Sieben engagierte Schülerinnen und Schüler der AHS Neumünster:</p>
+    <ul>
+      <li>Leitung & Organisation</li>
+      <li>Design & Konstruktion</li>
+      <li>Marketing & Sponsorenpflege</li>
+      <li>Technik & Prototypenbau</li>
+    </ul>
+  </section>
+
+  <section id="partners" class="section fade-in parallax" data-speed="0.2">
+    <h2>Unsere Partner</h2>
+    <div class="partners-grid">
+      <div class="partner">
+        <img src="metall-chemie-logo.png" alt="Metall-Chemie Holding"/>
+        <p>Metall-Chemie Holding – Finanzielle Unterstützung & Know-How-Transfer</p>
+      </div>
+      <div class="partner">
+        <img src="holstenflock-logo.png" alt="Holstenflock"/>
+        <p>Holstenflock – Offizieller Partner und Flock-Technologie-Sponsor</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section slide-up parallax" data-speed="0.3">
+    <h2>Stay Connected</h2>
+    <p>Folgt uns auf Instagram für aktuelle Einblicke und News:</p>
+    <a href="https://instagram.com/_visionvanguards_" target="_blank" class="insta-btn">
+      @_visionvanguards_
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Vision Vanguards. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    // Intersection Observer für Scroll-Animationen
+    const sections = document.querySelectorAll('.fade-in, .slide-up');
+    const obsOptions = { threshold: 0.2 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, obsOptions);
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Parallax-Scroll via requestAnimationFrame
+    const parallaxElems = document.querySelectorAll('.parallax');
+
+    function updateParallax() {
+      const scrollY = window.pageYOffset;
+      parallaxElems.forEach(el => {
+        const speed = parseFloat(el.dataset.speed) || 0;
+        const yOffset = scrollY * speed;
+        el.style.transform = `translateY(${yOffset}px)`;
+      });
+      requestAnimationFrame(updateParallax);
+    }
+
+    requestAnimationFrame(updateParallax);
+  </script>
+</body>
+</html>
